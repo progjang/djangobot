@@ -15,7 +15,8 @@ def on_message(request):
     content = request.JSON['content'] # photo 타입일 경우에는 이미지 URL
     if content.startswith('멜론검색:'):
         query = content[6:]
-        response = '멜론 {} 검색결과\n\n'.format(query) + functions.melon_search(query)
+        response = query
+        #response = '멜론 {} 검색결과\n\n'.format(query) + functions.melon_search(query)
     else:
         response = '지원하는 명령어가 아닙니다.'
     return {
